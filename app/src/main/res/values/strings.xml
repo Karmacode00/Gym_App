@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Gym App</string>
+
+    //Titles
+    <string name="login_title">Inicia Sesión</string>
+    <string name="register_title">Registro de Usuario</string>
+    <string name="add_title">Añadir Medición</string>
+    <string name="main_title">Menú Principal</string>
+    <string name="history_title">Historial de Mediciones</string>
+
+    //Label
+    <string name="history_date">Seleccionar según antigüedad:</string>
+
+    //Buttons
+    <string name="login_button">Ingresar</string>
+    <string name="to_register_button">Ir a Registrarme</string>
+    <string name="register_button">Registrarme</string>
+    <string name="add_button">Añadir</string>
+    <string name="add_return_button">Volver</string>
+
+    <string name="new_add_button">Añadir Medición</string>
+    <string name="history_button">Mis Mediciones</string>
+    <string name="logout_button">Cerrar Sesión</string>
+
+    <string name="delete_button">Eliminar Medición</string>
+    <string name="history_return_button">Volver</string>
+
+    //Fields
+    <string name="field_login_user_label">Usuario</string>
+    <string name="field_login_password_label">Contraseña</string>
+
+    <string name="field_add_date_label">Fecha (dd/mm/aaaa)</string>
+    <string name="field_add_weight_label">Peso</string>
+    <string name="field_add_imc_label">IMC Calculado</string>
+
+    <string name="field_register_user_label">Usuario</string>
+    <string name="field_register_password_label">Contraseña</string>
+    <string name="field_name_label">Nombre</string>
+    <string name="field_lastname_label">Apellido</string>
+    <string name="field_height_label">Estatura (en cms)</string>
+    <string name="field_birthdate_label">Fecha de Nacimiento (dd/mm/aaaa)</string>
+
+</resources>
