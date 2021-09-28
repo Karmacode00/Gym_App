@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24sp">
+
+    <TextView
+        android:id="@+id/item_data_tv_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/item_data_tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/item_data_tv_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Weight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/item_data_tv_imc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="IMC"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+</LinearLayout>

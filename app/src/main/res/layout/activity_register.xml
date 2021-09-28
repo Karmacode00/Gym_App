@@ -31,6 +31,7 @@
                 android:textSize="24sp" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_register_field_user"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="12dp">
@@ -38,10 +39,26 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/field_register_user_label" />
+                    android:hint="@string/field_register_user_label"
+                    android:inputType="textCapWords" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_register_field_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/field_register_password_label"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_register_field_first_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="12dp">
@@ -49,10 +66,12 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/field_register_password_label" />
+                    android:hint="@string/field_name_label"
+                    android:inputType="textCapWords" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_register_field_last_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="12dp">
@@ -60,21 +79,12 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/field_name_label" />
+                    android:hint="@string/field_lastname_label"
+                    android:inputType="textCapWords" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="12dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/field_lastname_label" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_register_field_height"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="12dp">
@@ -86,6 +96,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_register_field_birthday"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="18dp">
@@ -97,10 +108,16 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/activity_register_btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/register_button" />
+
+            <Button
+                android:id="@+id/activity_register_btn_return"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/register_return_button" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

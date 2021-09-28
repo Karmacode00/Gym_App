@@ -20,7 +20,6 @@ public class HistoryActivity extends AppCompatActivity {
         btnReturn.setOnClickListener(view -> {
             Intent i = new Intent(view.getContext(), MainActivity.class);
             startActivity(i);
-            finish();
         });
     }
 }

@@ -34,19 +34,22 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/field_login_user_label" />
+                android:hint="@string/field_login_user_label"
+                android:inputType="textCapWords" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/activity_login_field_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/field_login_password_label" />
+                android:hint="@string/field_login_password_label"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

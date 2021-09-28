@@ -6,49 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:importantForAccessibility="no"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="32dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24sp">
+            android:gravity="center"
+            android:text="@string/main_title"
+            android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="48dp"
-                android:gravity="center"
-                android:text="@string/main_title"
-                android:textSize="24sp" />
+        <ListView
+            android:id="@+id/activity_main_lv_data"
+            android:layout_width="match_parent"
+            android:layout_height="420dp" />
 
-            <Button
-                android:id="@+id/activity_main_btn_add"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/new_add_button" />
+        <Button
+            android:id="@+id/activity_main_btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_add_button" />
 
-            <Button
-                android:id="@+id/activity_main_btn_history"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="48dp"
-                android:text="@string/history_button" />
+        <Button
+            android:id="@+id/activity_main_btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/logout_button" />
 
-            <Button
-                android:id="@+id/activity_main_btn_logout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/logout_button" />
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
