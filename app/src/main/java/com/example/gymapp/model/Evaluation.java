@@ -1,13 +1,13 @@
 package com.example.gymapp.model;
 
 
-public class Data {
+public class Evaluation {
     private long id;
     private String date;
     private String weight;
     private String imc;
 
-    public Data(String date, String weight, String imc) {
+    public Evaluation(String date, String weight, String imc) {
         this.date = date;
         this.weight = weight;
         this.imc = imc;

@@ -11,7 +11,7 @@ import android.content.Intent;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.gymapp.model.Data;
+import com.example.gymapp.model.Evaluation;
 import com.example.gymapp.ui.DataAdapter;
 
 
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnLogout, btnAdd, btnHistory;
     private ListView lvData;
 
-    private List<Data> dataList = new ArrayList<>();
+    private List<Evaluation> evaluationList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity {
         //btnHistory = findViewById(R.id.activity_main_btn_history);
 
         for (int x = 0; x < 10; ++x) {
-            Data newData = new Data(String.format("Date %d", x), String.format("Weight %d", x), String.format("IMC %d", x));
-            newData.setId(x);
-            dataList.add(newData);
+            Evaluation newEvaluation = new Evaluation(String.format("Date %d", x), String.format("Weight %d", x), String.format("IMC %d", x));
+            newEvaluation.setId(x);
+            evaluationList.add(newEvaluation);
         }
 
-        DataAdapter adapter = new DataAdapter(this, dataList);
+        DataAdapter adapter = new DataAdapter(this, evaluationList);
 
         lvData.setAdapter(adapter);
 

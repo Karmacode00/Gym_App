@@ -34,6 +34,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusable="false"
                 android:hint="@string/field_add_date_label" />
         </com.google.android.material.textfield.TextInputLayout>
 

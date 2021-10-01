@@ -8,32 +8,32 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.gymapp.R;
-import com.example.gymapp.model.Data;
+import com.example.gymapp.model.Evaluation;
 
 import java.util.List;
 
 public class DataAdapter extends BaseAdapter {
     private Context ctx;
-    private List<Data> dataList;
+    private List<Evaluation> evaluationList;
 
-    public DataAdapter(Context ctx, List<Data> dataList) {
+    public DataAdapter(Context ctx, List<Evaluation> evaluationList) {
         this.ctx = ctx;
-        this.dataList = dataList;
+        this.evaluationList = evaluationList;
     }
 
     @Override
     public int getCount() {
-        return dataList.size();
+        return evaluationList.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return dataList.get(i);
+        return evaluationList.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return dataList.get(i).getId();
+        return evaluationList.get(i).getId();
     }
 
     @Override
@@ -42,17 +42,17 @@ public class DataAdapter extends BaseAdapter {
 
         view = inflater.inflate(R.layout.item_data, null);
 
-        Data data = dataList.get(i);
+        Evaluation evaluation = evaluationList.get(i);
 
         TextView tvDate = view.findViewById(R.id.item_data_tv_date);
         TextView tvId = view.findViewById(R.id.item_data_tv_id);
         TextView tvWeight = view.findViewById(R.id.item_data_tv_weight);
         TextView tvImc = view.findViewById(R.id.item_data_tv_imc);
 
-        tvId.setText(Long.toString(data.getId()));
-        tvDate.setText(data.getDate());
-        tvWeight.setText(data.getWeight());
-        tvImc.setText(data.getImc());
+        tvId.setText(Long.toString(evaluation.getId()));
+        tvDate.setText(evaluation.getDate());
+        tvWeight.setText(evaluation.getWeight());
+        tvImc.setText(evaluation.getImc());
 
         return view;
     }
