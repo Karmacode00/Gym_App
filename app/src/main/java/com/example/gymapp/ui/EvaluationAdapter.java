@@ -12,11 +12,11 @@ import com.example.gymapp.model.Evaluation;
 
 import java.util.List;
 
-public class DataAdapter extends BaseAdapter {
+public class EvaluationAdapter extends BaseAdapter {
     private Context ctx;
     private List<Evaluation> evaluationList;
 
-    public DataAdapter(Context ctx, List<Evaluation> evaluationList) {
+    public EvaluationAdapter(Context ctx, List<Evaluation> evaluationList) {
         this.ctx = ctx;
         this.evaluationList = evaluationList;
     }
@@ -40,14 +40,17 @@ public class DataAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         LayoutInflater inflater = LayoutInflater.from(ctx);
 
-        view = inflater.inflate(R.layout.item_data, null);
+        view = inflater.inflate(R.layout.item_evaluation, null);
 
         Evaluation evaluation = evaluationList.get(i);
 
-        TextView tvDate = view.findViewById(R.id.item_data_tv_date);
-        TextView tvId = view.findViewById(R.id.item_data_tv_id);
-        TextView tvWeight = view.findViewById(R.id.item_data_tv_weight);
-        TextView tvImc = view.findViewById(R.id.item_data_tv_imc);
+        TextView tvDate = view.findViewById(R.id.item_evaluation_tv_date);
+        TextView tvId = view.findViewById(R.id.item_evaluation_tv_id);
+        TextView tvWeight = view.findViewById(R.id.item_evaluation_tv_weight);
+        TextView tvImc = view.findViewById(R.id.item_evaluation_tv_imc);
+
+        //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        //dateFormat.format
 
         tvId.setText(Long.toString(evaluation.getId()));
         tvDate.setText(evaluation.getDate());

@@ -7,6 +7,7 @@
     <string name="add_title">Añadir Medición</string>
     <string name="main_title">Mediciones</string>
     <string name="history_title">Historial de Mediciones</string>
+    <string name="detail_title">Detalle Evaluación</string>
 
     //Label
     <string name="history_date">Seleccionar según antigüedad:</string>
@@ -26,6 +27,11 @@
     <string name="delete_button">Eliminar Medición</string>
     <string name="history_return_button">Volver</string>
 
+    <string name="main_filter_button">Filtrar</string>
+
+    <string name="detail_back_button">Volver</string>
+    <string name="detail_delete_button">Eliminar</string>
+
     //Fields
     <string name="field_login_user_label">Usuario</string>
     <string name="field_login_password_label">Contraseña</string>
@@ -40,5 +46,8 @@
     <string name="field_lastname_label">Apellido</string>
     <string name="field_height_label">Estatura (en cms)</string>
     <string name="field_birthdate_label">Fecha de Nacimiento</string>
+
+    <string name="field_from_label">Desde</string>
+    <string name="field_to_label">Hasta</string>
 
 </resources>

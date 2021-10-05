@@ -6,7 +6,7 @@
     android:padding="24sp">
 
     <TextView
-        android:id="@+id/item_data_tv_id"
+        android:id="@+id/item_evaluation_tv_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ID"
@@ -14,21 +14,21 @@
         android:textStyle="italic" />
 
     <TextView
-        android:id="@+id/item_data_tv_date"
+        android:id="@+id/item_evaluation_tv_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Date"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
-        android:id="@+id/item_data_tv_weight"
+        android:id="@+id/item_evaluation_tv_weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
-        android:id="@+id/item_data_tv_imc"
+        android:id="@+id/item_evaluation_tv_imc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="IMC"

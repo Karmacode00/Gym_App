@@ -27,10 +27,54 @@
             android:text="@string/main_title"
             android:textSize="24sp" />
 
-        <ListView
-            android:id="@+id/activity_main_lv_data"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="420dp" />
+            android:layout_height="52dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_main_from"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:layout_weight="1"
+                android:focusable="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/field_from_label" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/activity_main_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
+                android:layout_weight="1"
+                android:focusable="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/field_to_label" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/activity_main_search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/main_filter_button" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/activity_main_lv_evaluation"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/activity_main_btn_add"

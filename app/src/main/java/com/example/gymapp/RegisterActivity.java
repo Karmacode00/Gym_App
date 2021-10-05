@@ -47,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
             String password = tilPassword.getEditText().getText().toString();
             String birthday = tilBirthday.getEditText().getText().toString();
 
-            //Pendiente: Implementar validaciones
+            // TODO: Implementar validaciones
 
             SimpleDateFormat dateFormatter = new SimpleDateFormat(DATE_PATTERN);
             Date birthdayDate = null;

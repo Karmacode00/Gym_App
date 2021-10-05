@@ -1,7 +1,9 @@
 package com.example.gymapp.model;
 
 
-public class Evaluation {
+import java.io.Serializable;
+
+public class Evaluation implements Serializable {
     private long id;
     private String date;
     private String weight;
