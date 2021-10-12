@@ -20,11 +20,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/activity_main_tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/main_title"
+            android:text="Evaluaciones de Usuario"
             android:textSize="24sp" />
 
         <LinearLayout

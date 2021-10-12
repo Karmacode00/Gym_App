@@ -8,17 +8,24 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.gymapp.controller.AuthController;
+import com.example.gymapp.model.User;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
 
     private Button btnLogin, btnRegister;
     private TextInputLayout tilUser, tilPassword;
+    private AuthController authController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        authController = new AuthController(this);
+
+        authController.checkUserSession();
+
 
         btnLogin = findViewById(R.id.activity_login_btn_login);
         btnRegister = findViewById(R.id.activity_login_btn_register);
@@ -29,10 +36,10 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(view -> {
             Toast.makeText(view.getContext(), "Iniciando sesión", Toast.LENGTH_SHORT).show();
 
-            String user = tilUser.getEditText().getText().toString();
+            String userName = tilUser.getEditText().getText().toString();
             String password = tilPassword.getEditText().getText().toString();
 
-            boolean userValid = !user.isEmpty();
+            boolean userValid = !userName.isEmpty();
             boolean passwordValid = !password.isEmpty();
 
             if (!userValid) {
@@ -50,8 +57,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             if (userValid && passwordValid) {
-                AuthController controller = new AuthController(view.getContext());
-                controller.login(user, password);
+                authController.login(userName, password);
             } else {
                 Toast.makeText(view.getContext(), "Campos inválidos", Toast.LENGTH_SHORT).show();
             }

@@ -1,40 +1,54 @@
 package com.example.gymapp.model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 
-public class User implements IUser{
-
+@Entity(tableName = "users", indices = {@Index(value = "user_name", unique = true)})
+public class UserEntity implements IUser{
+    @PrimaryKey(autoGenerate = true)
     private long id;
+
+    @ColumnInfo(name = "first_name")
     private String firstName;
+
+    @ColumnInfo(name = "last_name")
     private String lastName;
+
+    @ColumnInfo(name = "user_name")
     private String userName;
+
+    @ColumnInfo(name = "height")
     private String height;
+
+    @ColumnInfo(name = "birthday")
     private Date birthday;
+
+    @ColumnInfo(name = "password")
     private String password;
 
-    public User(String firstName, String lastName, String userName, String height, Date birthday) {
+    public UserEntity(long id, String firstName, String lastName, String userName, String height, Date birthday, String password) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.height = height;
         this.birthday = birthday;
+        this.password = password;
     }
 
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
         return firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
+    public String getLastName() { return lastName; }
 
     public String getUserName() {
         return userName;
@@ -52,7 +66,4 @@ public class User implements IUser{
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
