@@ -8,11 +8,11 @@ public class User implements IUser{
     private String firstName;
     private String lastName;
     private String userName;
-    private String height;
+    private double height;
     private Date birthday;
     private String password;
 
-    public User(String firstName, String lastName, String userName, String height, Date birthday) {
+    public User(String firstName, String lastName, String userName, double height, Date birthday) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
@@ -40,7 +40,7 @@ public class User implements IUser{
         return userName;
     }
 
-    public String getHeight() {
+    public double getHeight() {
         return height;
     }
 
@@ -54,5 +54,9 @@ public class User implements IUser{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getHeightString(){
+        return Double.toString(height);
     }
 }

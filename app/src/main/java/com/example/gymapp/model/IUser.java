@@ -11,7 +11,7 @@ public interface IUser {
 
     String getUserName();
 
-    String getHeight();
+    double getHeight();
 
     Date getBirthday();
 

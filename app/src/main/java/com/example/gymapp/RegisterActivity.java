@@ -57,6 +57,17 @@ public class RegisterActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+            double heightDouble = 0.0;
+
+            try{
+               heightDouble = Double.parseDouble(height);
+               tilHeight.setError(null);
+               tilHeight.setErrorEnabled(false);
+            } catch (Exception error){
+               tilHeight.setError("La estatura es inválida");
+               return;
+            }
+
 
             boolean userNameValid = !userName.isEmpty();
             boolean passwordValid = !password.isEmpty();
@@ -74,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
             if (userNameValid && passwordValid && firstNameValid && lastNameValid && heightValid && birthdayValid) {
-                User user = new User(firstName, lastName, userName, height, birthdayDate);
+                User user = new User(firstName, lastName, userName, heightDouble, birthdayDate);
                 user.setPassword(password);
 
                 AuthController controller = new AuthController(view.getContext());
@@ -87,9 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         btnReturn.setOnClickListener(view -> {
-            Intent i = new Intent(view.getContext(), LoginActivity.class);
-            startActivity(i);
-            finish();
+            super.onBackPressed();
         });
     }
 }

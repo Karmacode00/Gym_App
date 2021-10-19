@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.widget.Button;
 
+@Deprecated
+
 public class HistoryActivity extends AppCompatActivity {
 
     private Button btnReturn;

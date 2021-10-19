@@ -30,6 +30,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="52dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -44,6 +45,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:focusable="false"
                     android:hint="@string/field_from_label" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -59,16 +61,27 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:focusable="false"
                     android:hint="@string/field_to_label" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/activity_main_search"
+                android:id="@+id/activity_main_btn_filter"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/main_filter_button" />
+
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/activity_main_tv_clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Limpiar filtro"
+            android:textColor="@color/teal_700" />
 
         <ListView
             android:id="@+id/activity_main_lv_evaluation"

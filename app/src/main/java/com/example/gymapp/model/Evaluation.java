@@ -2,19 +2,24 @@ package com.example.gymapp.model;
 
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class Evaluation implements Serializable {
+public class Evaluation implements Serializable, IEvaluation {
     private long id;
-    private String date;
-    private String weight;
-    private String imc;
+    private Date date;
+    private double weight;
+    private double imc;
+    private long userId;
 
-    public Evaluation(String date, String weight, String imc) {
+    public Evaluation(Date date, double weight, double imc, long userId) {
         this.date = date;
         this.weight = weight;
         this.imc = imc;
+        this.userId = userId;
     }
 
+    @Override
     public long getId() {
         return id;
     }
@@ -23,15 +28,37 @@ public class Evaluation implements Serializable {
         this.id = id;
     }
 
-    public String getWeight() {
+    @Override
+    public double getWeight() {
         return weight;
     }
 
-    public String getDate() {
+    @Override
+    public Date getDate() {
         return date;
     }
 
-    public String getImc() {
+    @Override
+    public double getImc() {
         return imc;
+    }
+
+    @Override
+    public long getUserId() {
+        return userId;
+    }
+
+    public String getWeightString(){
+        return Double.toString(weight);
+    }
+
+    public String getImcString(){
+        return Double.toString(imc);
+    }
+
+    public String getDateString(){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return dateFormat.format(date);
+
     }
 }

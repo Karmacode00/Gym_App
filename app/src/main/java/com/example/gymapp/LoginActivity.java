@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         btnLogin.setOnClickListener(view -> {
-            Toast.makeText(view.getContext(), "Iniciando sesión", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(view.getContext(), "Iniciando sesión", Toast.LENGTH_SHORT).show();
 
             String userName = tilUser.getEditText().getText().toString();
             String password = tilPassword.getEditText().getText().toString();
@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
             boolean passwordValid = !password.isEmpty();
 
             if (!userValid) {
-                tilUser.setError("El usuario es inválido");
+                tilUser.setError("Campo requerido");
             } else {
                 tilUser.setError(null);
                 tilUser.setErrorEnabled(false);
@@ -57,14 +57,15 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             if (userValid && passwordValid) {
+                Toast.makeText(view.getContext(), "Iniciando sesión", Toast.LENGTH_SHORT).show();
                 authController.login(userName, password);
             } else {
                 Toast.makeText(view.getContext(), "Campos inválidos", Toast.LENGTH_SHORT).show();
             }
 
-            Intent i = new Intent(view.getContext(), MainActivity.class);
-            startActivity(i);
-            finish();
+            //Intent i = new Intent(view.getContext(), MainActivity.class);
+            //startActivity(i);
+            //finish();
         });
 
         btnRegister.setOnClickListener(view -> {

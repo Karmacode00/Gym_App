@@ -22,7 +22,7 @@ public class AuthController {
     private final String KEY_USERNAME = "userName";
     private final String KEY_FIRST_NAME = "userFirstName";
     private final String KEY_LAST_NAME = "userLastName";
-    private final String KEY_USER_HEIGHT = "userHEIGHT";
+    private final String KEY_USER_HEIGHT = "userHeight";
 
     private UserDao userDao;
 
@@ -44,7 +44,7 @@ public class AuthController {
         editor.putString(KEY_USERNAME, user.getUserName());
         editor.putString(KEY_FIRST_NAME, user.getFirstName());
         editor.putString(KEY_LAST_NAME, user.getLastName());
-        editor.putString(KEY_USER_HEIGHT, user.getHeight());
+        editor.putString(KEY_USER_HEIGHT, user.getHeightString());
         editor.apply();
     }
 
@@ -53,9 +53,9 @@ public class AuthController {
         String firstName = preferences.getString(KEY_FIRST_NAME, "");
         String lastName = preferences.getString(KEY_LAST_NAME, "");
         String userName = preferences.getString(KEY_USERNAME, "");
-        String height = preferences.getString(KEY_USER_HEIGHT, "");
+        String heightString = preferences.getString(KEY_USER_HEIGHT, "0.0");
 
-        User user = new User(firstName, lastName, userName, height, new Date());
+        User user = new User(firstName, lastName, userName, Double.parseDouble(heightString), new Date());
         user.setId(id);
 
         return user;
@@ -85,6 +85,12 @@ public class AuthController {
 
     public void login(String userName, String password) {
         UserEntity userEntity = userDao.findByUsername(userName);
+
+        if (userEntity == null){
+            Toast.makeText(ctx, "Credenciales inválidas", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         User user = new UserMapper(userEntity).toBase();
 
         if (BCrypt.checkpw(password, user.getPassword())) {
@@ -94,9 +100,10 @@ public class AuthController {
             ctx.startActivity(i);
             ((Activity) ctx).finish();
         } else {
-            Toast.makeText(ctx, String.format("La contraseña es incorrecta", userName), Toast.LENGTH_SHORT).show();
+            Toast.makeText(ctx, "Credenciales inválidas", Toast.LENGTH_SHORT).show();
         }
     }
+
     public void logout() {
         SharedPreferences.Editor editor = this.preferences.edit();
         editor.clear();
