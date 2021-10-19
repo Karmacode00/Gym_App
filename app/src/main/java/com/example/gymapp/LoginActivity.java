@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
         btnLogin.setOnClickListener(view -> {
-            //Toast.makeText(view.getContext(), "Iniciando sesión", Toast.LENGTH_SHORT).show();
 
             String userName = tilUser.getEditText().getText().toString();
             String password = tilPassword.getEditText().getText().toString();
@@ -63,9 +62,6 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(view.getContext(), "Campos inválidos", Toast.LENGTH_SHORT).show();
             }
 
-            //Intent i = new Intent(view.getContext(), MainActivity.class);
-            //startActivity(i);
-            //finish();
         });
 
         btnRegister.setOnClickListener(view -> {
