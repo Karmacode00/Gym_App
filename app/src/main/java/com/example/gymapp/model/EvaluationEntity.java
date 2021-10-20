@@ -17,17 +17,17 @@ public class EvaluationEntity implements IEvaluation{
     @ColumnInfo(name = "date")
     private Date date;
 
-    @ColumnInfo(name = "imc")
-    private double imc;
+    /*@ColumnInfo(name = "imc")
+    private double imc;*/
 
     @ColumnInfo(name = "user_id")
     private long userId;
 
-    public EvaluationEntity(long id, double weight, Date date, double imc, long userId) {
+    public EvaluationEntity(long id, double weight, Date date, long userId) {
         this.id = id;
         this.weight = weight;
         this.date = date;
-        this.imc = imc;
+        //this.imc = imc;
         this.userId = userId;
     }
 
@@ -46,10 +46,10 @@ public class EvaluationEntity implements IEvaluation{
         return date;
     }
 
-    @Override
+    /*@Override
     public double getImc() {
         return imc;
-    }
+    }*/
 
     @Override
     public long getUserId() {

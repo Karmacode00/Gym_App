@@ -6,6 +6,6 @@ public interface IEvaluation {
     long getId();
     double getWeight();
     Date getDate();
-    double getImc();
+    //double getImc();
     long getUserId();
 }

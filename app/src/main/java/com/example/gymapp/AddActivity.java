@@ -3,6 +3,7 @@ package com.example.gymapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -35,7 +36,7 @@ public class AddActivity extends AppCompatActivity {
 
         tilDate = findViewById(R.id.activity_add_date);
         tilWeight = findViewById(R.id.activity_add_weight);
-        tilImc = findViewById(R.id.activity_add_imc);
+        //tilImc = findViewById(R.id.activity_add_imc);
 
         tilDate.getEditText().setOnClickListener(view -> {
             DatePickerFragment.showDatePickerDialog(this, tilDate, new Date());
@@ -44,15 +45,16 @@ public class AddActivity extends AppCompatActivity {
         btnNew.setOnClickListener(view -> {
             String date = tilDate.getEditText().getText().toString();
             String weight = tilWeight.getEditText().getText().toString();
-            String imc = tilImc.getEditText().getText().toString();
+            //String imc = tilImc.getEditText().getText().toString();
 
-
+            //Log.d("fecha", date);
             SimpleDateFormat dateFormatter = new SimpleDateFormat(DATE_PATTERN);
-            Date evDate = null;
+            Date evDate;
             try {
                 evDate = dateFormatter.parse(date);
             } catch (ParseException e) {
                 e.printStackTrace();
+                return;
             }
 
             double weightDouble = 0.0;
@@ -66,7 +68,7 @@ public class AddActivity extends AppCompatActivity {
                 return;
             }
 
-            double imcDouble = 0.0;
+            /*double imcDouble = 0.0;
 
             try{
                 imcDouble = Double.parseDouble(imc);
@@ -75,28 +77,28 @@ public class AddActivity extends AppCompatActivity {
             } catch (Exception error){
                 tilImc.setError("Imc inválido");
                 return;
-            }
+            }*/
 
             boolean dateValid = !date.isEmpty();
             boolean weightValid = !weight.isEmpty();
-            boolean imcValid = !imc.isEmpty();
+            //boolean imcValid = !imc.isEmpty();
 
-            if (!dateValid || !weightValid || !imcValid) {
+            if (!dateValid || !weightValid) {
                 tilDate.setError("Campo requerido");
                 tilWeight.setError("Campo requerido");
-                tilImc.setError("Campo requerido");
+
             } else {
                 tilWeight.setError(null);
                 tilWeight.setErrorEnabled(false);
             }
 
-            if (dateValid && weightValid && imcValid) {
+            if (dateValid && weightValid) {
                 AuthController authController = new AuthController(view.getContext());
 
                 User user = authController.getUserSession();
 
 
-                Evaluation evaluation = new Evaluation(evDate, weightDouble, imcDouble, user.getId());
+                Evaluation evaluation = new Evaluation(evDate, weightDouble, user.getId());
                 EvaluationController controller = new EvaluationController(view.getContext());
 
                 controller.register(evaluation);
