@@ -1,6 +1,8 @@
 package com.example.gymapp.model;
 
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -58,6 +60,7 @@ public class Evaluation implements Serializable, IEvaluation {
     }*/
 
     public String getDateString(){
+        //Log.d("date prueba", String.valueOf(date));
         try {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             return formatter.format(date);
@@ -67,7 +70,7 @@ public class Evaluation implements Serializable, IEvaluation {
     }
 
     public double calculateImc(double height) {
-        return weight / (height * height);
+        return (weight / ((height/100) * (height/100)));
     }
 
     public String calculateImcString(double height) {

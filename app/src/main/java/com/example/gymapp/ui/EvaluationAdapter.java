@@ -60,7 +60,7 @@ public class EvaluationAdapter extends BaseAdapter {
         tvId.setText(Long.toString(evaluation.getId()));
         tvDate.setText(String.format("Fecha : %s", evaluation.getDateString()));
         tvWeight.setText(String.format("Peso : %s", evaluation.getWeightString()));
-        tvImc.setText(String.format("IMC : %s", evaluation.calculateImcString(user.getHeight())));
+        tvImc.setText(String.format("IMC : %.2f", evaluation.calculateImc(user.getHeight())));
 
         return view;
     }

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.gymapp.MainActivity;
@@ -72,6 +73,7 @@ public class EvaluationController {
         List<Evaluation> evaluationList = new ArrayList<>();
 
         for(EvaluationEntity evaluationEntity : evaluationEntityList){
+            Log.d("date prueba", String.valueOf(evaluationEntity.getDate()));
             EvaluationMapper mapper = new EvaluationMapper(evaluationEntity);
             Evaluation evaluation = mapper.toBase();
             evaluationList.add(evaluation);

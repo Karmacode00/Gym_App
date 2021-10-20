@@ -11,10 +11,10 @@ import java.util.List;
 
 @Dao
 public interface EvaluationDao {
-    @Query("SELECT id, weight, date user_id FROM evaluations WHERE user_id = :userId")
+    @Query("SELECT id, weight, date, user_id FROM evaluations WHERE user_id = :userId")
     List<EvaluationEntity> findAll (long userId);
 
-    @Query("SELECT id, weight, date user_id FROM evaluations WHERE user_id = :userId AND date BETWEEN :from AND :to")
+    @Query("SELECT id, weight, date, user_id FROM evaluations WHERE user_id = :userId AND date BETWEEN :from AND :to")
     List<EvaluationEntity> findByRange (Date from, Date to, long userId);
 
     @Insert

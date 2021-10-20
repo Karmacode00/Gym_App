@@ -41,9 +41,8 @@ public class DetailActivity extends AppCompatActivity {
 
         tvId.setText(Long.toString(evaluation.getId()));
         tvDate.setText(String.format("Fecha : %s", evaluation.getDateString()));
-        Log.d("myTag", evaluation.toString());
         tvWeight.setText(String.format("Peso : %s", evaluation.getWeightString()));
-        tvImc.setText(String.format("IMC : %s", evaluation.calculateImcString(user.getHeight())));
+        tvImc.setText(String.format("IMC : %.2f", evaluation.calculateImc(user.getHeight())));
 
 
         btnDelete.setOnClickListener(view -> {
