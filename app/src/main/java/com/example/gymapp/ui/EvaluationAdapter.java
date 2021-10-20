@@ -1,7 +1,6 @@
 package com.example.gymapp.ui;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import com.example.gymapp.controller.AuthController;
 import com.example.gymapp.model.Evaluation;
 import com.example.gymapp.model.User;
 
-import java.util.Date;
 import java.util.List;
 
 public class EvaluationAdapter extends BaseAdapter {
@@ -56,7 +54,6 @@ public class EvaluationAdapter extends BaseAdapter {
         TextView tvWeight = view.findViewById(R.id.item_evaluation_tv_weight);
         TextView tvImc = view.findViewById(R.id.item_evaluation_tv_imc);
 
-
         tvId.setText(Long.toString(evaluation.getId()));
         tvDate.setText(String.format("Fecha : %s", evaluation.getDateString()));
         tvWeight.setText(String.format("Peso : %s", evaluation.getWeightString()));
@@ -64,5 +61,4 @@ public class EvaluationAdapter extends BaseAdapter {
 
         return view;
     }
-
 }

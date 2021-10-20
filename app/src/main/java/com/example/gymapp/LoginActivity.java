@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.gymapp.controller.AuthController;
-import com.example.gymapp.model.User;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
@@ -26,12 +25,10 @@ public class LoginActivity extends AppCompatActivity {
 
         authController.checkUserSession();
 
-
         btnLogin = findViewById(R.id.activity_login_btn_login);
         btnRegister = findViewById(R.id.activity_login_btn_register);
         tilUser = findViewById(R.id.activity_login_field_user);
         tilPassword = findViewById(R.id.activity_login_field_password);
-
 
         btnLogin.setOnClickListener(view -> {
 
@@ -61,7 +58,6 @@ public class LoginActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(view.getContext(), "Campos inválidos", Toast.LENGTH_SHORT).show();
             }
-
         });
 
         btnRegister.setOnClickListener(view -> {

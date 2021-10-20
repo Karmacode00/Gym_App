@@ -26,7 +26,6 @@ public class UserMapper {
                 this.user.getUserName(),
                 this.user.getHeight(),
                 this.user.getBirthday()
-
         );
         userBase.setPassword(this.user.getPassword());
         userBase.setId(this.user.getId());

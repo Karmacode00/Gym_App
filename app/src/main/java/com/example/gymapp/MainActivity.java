@@ -6,12 +6,10 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.content.Intent;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -32,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private TextInputLayout tilFrom, tilTo;
     private AuthController authController;
     private EvaluationController evaluationController;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
             DatePickerFragment.showDatePickerDialog(this, tilTo, new Date());
         });
 
-
         List<Evaluation> evaluationList = evaluationController.getAll();
 
         EvaluationAdapter adapter = new EvaluationAdapter(this, evaluationList);
@@ -78,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
             i.putExtra("evaluation", evaluation);
             view.getContext().startActivity(i);
         }));
-
 
         btnLogout.setOnClickListener(view -> {
             authController.logout();
@@ -116,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
                         rangeView.getContext().startActivity(i);
                     }));
 
-
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -128,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
             tilTo.getEditText().setText("");
             lvEvaluation.setAdapter(adapter);
         });
-
     }
 
     @Override

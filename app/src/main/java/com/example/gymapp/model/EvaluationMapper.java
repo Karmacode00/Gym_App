@@ -11,7 +11,6 @@ public class EvaluationMapper {
         Evaluation baseEvaluation = new Evaluation(
                 this.evaluation.getDate(),
                 this.evaluation.getWeight(),
-                //this.evaluation.getImc(),
                 this.evaluation.getUserId()
         );
         baseEvaluation.setId(this.evaluation.getId());
@@ -23,7 +22,6 @@ public class EvaluationMapper {
                 this.evaluation.getId(),
                 this.evaluation.getWeight(),
                 this.evaluation.getDate(),
-                //this.evaluation.getImc(),
                 this.evaluation.getUserId()
         );
     }

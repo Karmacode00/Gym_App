@@ -4,11 +4,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.gymapp.MainActivity;
 import com.example.gymapp.dao.EvaluationDao;
 import com.example.gymapp.lib.GymAppDatabase;
 import com.example.gymapp.model.Evaluation;
@@ -35,9 +33,6 @@ public class EvaluationController {
         EvaluationEntity newEvaluation = mapper.toEntity();
         evaluationDao.insert(newEvaluation);
         ((Activity) ctx).onBackPressed();
-      /*  Intent i = new Intent(ctx, MainActivity.class);
-        ctx.startActivity(i);
-        ((Activity) ctx).finish();*/
     }
 
     public void delete(long id) {

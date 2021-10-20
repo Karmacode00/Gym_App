@@ -2,9 +2,7 @@ package com.example.gymapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -30,7 +28,6 @@ public class DetailActivity extends AppCompatActivity {
         User user = authController.getUserSession();
 
         Evaluation evaluation = (Evaluation) getIntent().getSerializableExtra("evaluation");
-
 
         tvId = findViewById(R.id.detail_tv_id);
         tvDate = findViewById(R.id.detail_tv_date);

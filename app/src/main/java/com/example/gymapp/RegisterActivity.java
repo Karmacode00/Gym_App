@@ -47,7 +47,6 @@ public class RegisterActivity extends AppCompatActivity {
             String password = tilPassword.getEditText().getText().toString();
             String birthday = tilBirthday.getEditText().getText().toString();
 
-
             SimpleDateFormat dateFormatter = new SimpleDateFormat(DATE_PATTERN);
             Date birthdayDate = null;
             try {
@@ -67,14 +66,12 @@ public class RegisterActivity extends AppCompatActivity {
                return;
             }
 
-
             boolean userNameValid = !userName.isEmpty();
             boolean passwordValid = !password.isEmpty();
             boolean firstNameValid = !firstName.isEmpty();
             boolean lastNameValid = !lastName.isEmpty();
             boolean heightValid = !height.isEmpty();
             boolean birthdayValid = !birthday.isEmpty();
-
 
             if (!userNameValid || !passwordValid || !firstNameValid || !lastNameValid || !heightValid || !birthdayValid) {
                 tilPassword.setError("Campo requerido");
@@ -93,7 +90,6 @@ public class RegisterActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(view.getContext(), "No puede haber campos vacíos", Toast.LENGTH_SHORT).show();
             }
-
         });
 
         btnReturn.setOnClickListener(view -> {
