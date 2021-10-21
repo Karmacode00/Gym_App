@@ -23,8 +23,6 @@ public class LoginActivity extends AppCompatActivity {
 
         authController = new AuthController(this);
 
-        authController.checkUserSession();
-
         btnLogin = findViewById(R.id.activity_login_btn_login);
         btnRegister = findViewById(R.id.activity_login_btn_register);
         tilUser = findViewById(R.id.activity_login_field_user);
